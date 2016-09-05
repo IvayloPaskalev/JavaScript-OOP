@@ -10,26 +10,25 @@
 
 function sum(array) {
 	 var i,
-        len,
-	    currentNumber,
-        sum = 0;
+             len,
+	     currentNumber,
+             sum = 0;
 
-		if(array.length === 0){
-			return null;
-		}
+	if(array.length === 0){
+		return null;
+	}
+	
         for (i = 0, len = array.length; i < len; i+=1) {
-			currentNumber = array[i];
+		currentNumber = array[i];
 
-			if(typeof currentNumber === 'string') {
-				if(isNaN(currentNumber)) {
-					throw 'Error';
-				}
-				currentNumber = currentNumber * 1;
+		if(typeof currentNumber === 'string') {
+			if(isNaN(currentNumber)) {
+				throw 'Error';
 			}
-
+			currentNumber = currentNumber * 1;
+		}
             sum = sum + currentNumber;
         }
-
         return sum;
 }
 
