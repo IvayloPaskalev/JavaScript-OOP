@@ -32,8 +32,4 @@ function sum(array) {
         return sum;
 }
 
-//var arr = ['1', 2 , '3', 's'];
-//var summ = sum(arr);
-//console.log(arr);
-//console.log(summ);
 module.exports = sum;
