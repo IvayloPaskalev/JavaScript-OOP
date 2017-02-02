@@ -8,28 +8,32 @@
 
 */
 
-function sum(array) {
-	 var i,
-             len,
-	     currentNumber,
-             sum = 0;
+function solve() {
+    return function sum(array) {
+        let len = array.length,
+            sum = 0,
+            i,
+            currentSymbol;
 
-	if(array.length === 0){
-		return null;
-	}
-	
-        for (i = 0, len = array.length; i < len; i+=1) {
-		currentNumber = array[i];
+        if (len === 0) {
+            return null;
+        }
+        if (typeof array === 'undefined') {
+            throw Error('Parameter is not passed');
+        }
 
-		if(typeof currentNumber === 'string') {
-			if(isNaN(currentNumber)) {
-				throw 'Error';
-			}
-			currentNumber = currentNumber * 1;
-		}
-            sum = sum + currentNumber;
+        for (i = 0; i < len; i += 1) {
+            currentSymbol = array[i];
+            if (typeof currentSymbol === 'string') {
+                if (isNaN(currentSymbol)) {
+                    throw Error('Current symbol is not convertible to Number');
+                }
+                currentSymbol = currentSymbol * 1;
+            }
+            sum = sum + currentSymbol;
         }
         return sum;
+    }
 }
 
-module.exports = sum;
+module.exports = solve;
