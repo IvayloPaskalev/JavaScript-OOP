@@ -39,7 +39,7 @@ function solve() {
                 }
             }
             if (args) {
-                filtred = books.filter((b) => { return b.category === args.category });
+                filtred = books.filter(b => b.category === args.category);
             } else {
                 filtred = books;
             }
@@ -56,13 +56,13 @@ function solve() {
             if (book.author === '') {
                 throw Error('Author cannot be empty');
             }
-            if (books.filter((b) => { return b.title === book.title }).length > 0) {
+            if (books.filter(b => b.title === book.title).length > 0) {
                 throw Error('Already exist book with the same title!');
             }
-            if (books.filter((b) => { return b.isbn === book.isbn }).length > 0) {
+            if (books.filter(b => b.isbn === book.isbn).length > 0) {
                 throw Error('Already exist book with the same ISBN!');
             }
-            if (!(categories.filter((c) => { return c === book.category }).length > 0)) {
+            if (!(categories.filter(c => c === book.category).length > 0)) {
                 categories.push(book.category);
             }
 
@@ -72,7 +72,7 @@ function solve() {
         }
 
         function listCategories() {
-            return categories.sort((a, b) => { return a.ID - b.ID });
+            return categories.sort((a, b) => a.ID - b.ID);
         }
 
         return {
